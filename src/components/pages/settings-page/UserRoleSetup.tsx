@@ -1,3 +1,4 @@
+import { useState } from "react";
 import MailIcon from "../../../assets/react-icons/MailIcon";
 import InputRadio from "../../input/InputRadio";
 import InputText from "../../input/InputText";
@@ -5,6 +6,8 @@ import AdminRoleCard from "./AdminRoleCard";
 import UserTable from "./UsersTable";
 
 const UserRoleSetup = () => {
+  const [activeRoleCardIndex, setActiveRoleCardIndex] = useState(0);
+
   const mainEmailProps = {
     label: "My account email",
     hint: "Olivia@untitledui.com",
@@ -22,26 +25,24 @@ const UserRoleSetup = () => {
     {
       title: "Super Admin",
       lastActive: "06/2023",
-      isSelected: true,
     },
     {
       title: "Super Admin",
       lastActive: "01/2023",
-      isSelected: false,
     },
     {
       title: "Support Admin",
       lastActive: "10/2022",
-      isSelected: false,
     },
   ];
 
-  const adminRoles = roles.map(({ title, lastActive, isSelected }, index) => (
+  const adminRoles = roles.map(({ title, lastActive }, index) => (
     <AdminRoleCard
       title={title}
       lastActive={lastActive}
-      isSelected={isSelected}
+      isSelected={activeRoleCardIndex === index}
       key={index}
+      onClick={() => setActiveRoleCardIndex(index)}
     />
   ));
 

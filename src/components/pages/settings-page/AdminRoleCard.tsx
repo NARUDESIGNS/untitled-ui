@@ -9,12 +9,15 @@ interface AdminRoleCardProps {
   lastActive: string;
   /** Active card */
   isSelected?: boolean;
+  /** Click event */
+  onClick: () => void;
 }
 
 const AdminRoleCard = ({
   title,
   lastActive,
   isSelected,
+  onClick,
 }: AdminRoleCardProps) => {
   return (
     <div
@@ -23,6 +26,7 @@ const AdminRoleCard = ({
           ? "bg-purple-300/10 border-purple-300 hover:border-purple-400"
           : "bg-white hover:border-gray-400"
       } cursor-pointer transition-colors duration-300`}
+      onClick={onClick}
     >
       <span className="bg-white px-3 py-2 h-fit w-fit">
         <DoubleUsersIcon className="w-5 h-5" />
@@ -43,7 +47,9 @@ const AdminRoleCard = ({
           </a>
         </div>
       </div>
-      <div>{isSelected ? <CheckFilledIcon /> : <CheckEmptyIcon />}</div>
+      <div className="ml-auto">
+        {isSelected ? <CheckFilledIcon /> : <CheckEmptyIcon />}
+      </div>
     </div>
   );
 };

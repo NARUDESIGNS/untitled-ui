@@ -12,18 +12,21 @@ const UsersTableRow = ({
   users,
 }: UsersTableRowProps) => {
   return (
-    <div className="flex items-center justify-between p-6.5 border-b border-gray-300 text-gray-500 text-sm">
-      <div className="flex gap-3 w-[25%]">
+    <div className="flex items-center justify-between p-6.5 border-b border-gray-200 text-gray-500 text-sm">
+      <div className="flex gap-3 w-fit sm:w-[25%]">
         <input
           type="checkbox"
-          className="accent-purple-600 w-5 h-5 rounded-lg border-gray-300 focus:ring-2 focus:ring-purple-500/20 cursor-pointer"
+          className="accent-purple-600 w-5 h-5 rounded-lg border-gray-200 outline-purple-500/20 cursor-pointer"
         />
         <p className="text-gray-900 font-medium">{name}</p>
       </div>
-      <p className="w-[15%]">{type}</p>
-      <p className="w-[10%]">{date}</p>
-      <BaseTag title={status.trim().toLowerCase() as statusType} />
-      <UsersImgStack users={users} />
+      <p className="hidden sm:flex w-[15%]">{type}</p>
+      <p className="w-fit sm:w-[10%]">{date}</p>
+      <BaseTag
+        className="hidden sm:flex"
+        title={status.trim().toLowerCase() as statusType}
+      />
+      <UsersImgStack className="hidden sm:flex" users={users} />
     </div>
   );
 };

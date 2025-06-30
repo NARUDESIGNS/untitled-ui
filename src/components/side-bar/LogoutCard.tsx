@@ -3,7 +3,7 @@ import LogoutIcon from "../../assets/react-icons/LogoutIcon";
 
 const LogoutCard = () => {
   return (
-    <div className="flex gap-3 text-sm py-6 pb-0 border-solid border-gray-200 border-t">
+    <div className="flex gap-3 text-sm py-6 pb-0 border-solid border-gray-200 border-t mt-auto">
       <img
         src={LogoutImg}
         alt="Image of lady on white"
