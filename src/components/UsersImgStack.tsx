@@ -15,7 +15,7 @@ const UsersImgStack = ({
           src={url}
           alt="User Img"
           key={index}
-          className={`w-10 -h-10 rounded-full z-1 border-[1.5px] -ml-3 border-white`}
+          className={`w-10 -h-10 rounded-full z-1 border-[1.5px] -ml-3 border-white bg-gray-300 aspect-square`}
         />
       );
     }
