@@ -2,14 +2,17 @@ import { useEffect, useState } from "react";
 
 type HttpMethod = "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
 
-export function useFetchAPI<T = any>(url: string, method: HttpMethod = "GET") {
+export function useFetchAPI<T = unknown>(
+  url: string,
+  method: HttpMethod = "GET"
+) {
   const [data, setData] = useState<T | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     let isMounted = true;
-    setLoading(true);
+    setIsLoading(true);
     setError(null);
 
     fetch(url, { method })
@@ -22,7 +25,7 @@ export function useFetchAPI<T = any>(url: string, method: HttpMethod = "GET") {
         if (isMounted) setError(err);
       })
       .finally(() => {
-        if (isMounted) setLoading(false);
+        if (isMounted) setIsLoading(false);
       });
 
     return () => {
@@ -30,5 +33,5 @@ export function useFetchAPI<T = any>(url: string, method: HttpMethod = "GET") {
     };
   }, [url, method]);
 
-  return { data, loading, error };
+  return { data, isLoading, error };
 }
