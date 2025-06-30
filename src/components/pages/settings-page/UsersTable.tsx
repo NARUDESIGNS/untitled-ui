@@ -12,7 +12,7 @@ const UsersTable = () => {
       name={item.name}
       type={item.type}
       date={item.date}
-      status={item.status}
+      status={item.status.replace(" ", "")}
       users={item.users}
       key={item.id}
     />
