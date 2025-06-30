@@ -24,7 +24,9 @@ const UsersTableRow = ({
           onChange={(e) => setIsChecked(e.target.checked)}
           className="accent-purple-600 w-5 h-5 rounded-lg border-gray-200 outline-purple-500/20 cursor-pointer"
         />
-        <p className="text-gray-900 font-medium">{name}</p>
+        <p className="text-gray-900 font-medium overflow-hidden whitespace-nowrap text-ellipsis w-[70%]">
+          {name}
+        </p>
       </div>
       <p className="hidden sm:flex w-[15%]">{type}</p>
       <p className="w-fit sm:w-[10%]">{date}</p>
