@@ -12,5 +12,5 @@ export interface UsersDataType {
   /** Admin users */
   users: string[];
   /** Total admin users */
-  totalUsers?: number;
+  totalUser?: number;
 }

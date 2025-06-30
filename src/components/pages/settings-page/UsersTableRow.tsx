@@ -11,6 +11,7 @@ const UsersTableRow = ({
   date,
   status,
   users,
+  totalUser,
   isAllChecked,
 }: UsersTableRowProps & { isAllChecked?: boolean }) => {
   const [isChecked, setIsChecked] = useState(false);
@@ -34,7 +35,11 @@ const UsersTableRow = ({
         className="hidden sm:flex"
         title={status.trim().toLowerCase() as statusType}
       />
-      <UsersImgStack className="hidden sm:flex" users={users} />
+      <UsersImgStack
+        className="hidden sm:flex"
+        users={users}
+        totalUsers={totalUser}
+      />
     </div>
   );
 };

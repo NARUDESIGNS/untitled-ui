@@ -18,6 +18,7 @@ const UsersTable = () => {
       status={item.status.replace(" ", "")}
       users={item.users}
       isAllChecked={isAllChecked}
+      totalUser={item?.totalUser}
       key={item.id}
     />
   ));

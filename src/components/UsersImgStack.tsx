@@ -2,12 +2,14 @@ import DownloadCloudIcon from "../assets/react-icons/DownloadCloudIcon";
 
 const UsersImgStack = ({
   users,
+  totalUsers,
   className,
 }: {
   users: string[];
+  totalUsers?: number;
   className: string;
 }) => {
-  const totalUsers = users.length;
+  const usersCount = users.length;
   const usersImgs = users.map((url, index) => {
     if (index < 5) {
       return (
@@ -20,16 +22,15 @@ const UsersImgStack = ({
       );
     }
   });
+
+  console.log(totalUsers);
   return (
     <div className={`flex items-center w-[30%] ${className}`}>
       {usersImgs}
-      {totalUsers - 5 > 0 && (
-        <div className="w-10 h-10 flex items-center justify-center rounded-full z-1 -ml-3 order-last bg-gray-300">
-          +{totalUsers - 5}
+      {!!totalUsers && totalUsers - usersCount > 0 && (
+        <div className="w-10 h-10 flex items-center justify-center rounded-full z-1  border-[1.5px] -ml-3 border-white bg-gray-100 font-medium text-gray-600">
+          +{!!totalUsers && totalUsers - usersCount}
         </div>
-        // <div className="w-10 h-10 flex items-center justify-center rounded-full z-1 -ml-3 order-last bg-gray-300">
-        //   +{totalUsers - 5}
-        // </div>
       )}
       <DownloadCloudIcon className="w-5 h-5 cursor-pointer ml-auto" />
     </div>
