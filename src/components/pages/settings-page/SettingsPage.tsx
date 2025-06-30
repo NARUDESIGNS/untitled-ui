@@ -1,5 +1,8 @@
+import DownloadCloudIcon from "../../../assets/react-icons/DownloadCloudIcon";
+import BaseButton from "../../BaseButton";
 import SettingsNav from "./SettingsNav";
 import UserRoleSetup from "./UserRoleSetup";
+import UsersTable from "./UsersTable";
 
 const SettingsPage = () => {
   return (
@@ -10,6 +13,11 @@ const SettingsPage = () => {
       </p>
       <SettingsNav />
       <UserRoleSetup />
+      <div className="flex items-center justify-between gap-2 my-8">
+        <p className="text-gray-900 text-lg font-medium">User roles</p>
+        <BaseButton icon={<DownloadCloudIcon />} title="Download All" />
+      </div>
+      <UsersTable />
     </div>
   );
 };

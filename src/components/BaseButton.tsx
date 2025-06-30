@@ -10,10 +10,10 @@ interface BaseButtonProps {
 const BaseButton = ({ icon, title }: BaseButtonProps) => {
   return (
     <div
-      className={`flex items-center gap-2 text-gray-900 py-2.5 px-4 cursor-pointer hover:bg-gray-100 rounded`}
+      className={`flex items-center gap-2 text-gray-900 py-2.5 px-4 cursor-pointer hover:bg-gray-100 rounded-lg border border-gray-300 capitalize`}
     >
       {icon}
-      <p className="font-[500]">{title}</p>
+      <p className="font-medium text-sm">{title}</p>
     </div>
   );
 };

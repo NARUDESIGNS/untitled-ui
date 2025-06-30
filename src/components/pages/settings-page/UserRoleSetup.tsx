@@ -3,7 +3,6 @@ import MailIcon from "../../../assets/react-icons/MailIcon";
 import InputRadio from "../../input/InputRadio";
 import InputText from "../../input/InputText";
 import AdminRoleCard from "./AdminRoleCard";
-import UserTable from "./UsersTable";
 
 const UserRoleSetup = () => {
   const [activeRoleCardIndex, setActiveRoleCardIndex] = useState(0);
@@ -78,7 +77,6 @@ const UserRoleSetup = () => {
           </button>
         </div>
       </div>
-      <UserTable />
     </div>
   );
 };
