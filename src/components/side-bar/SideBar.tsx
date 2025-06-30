@@ -1,7 +1,19 @@
+import InputSearch from "../input/InputSearch";
+import LogoMark from "../LogoMark";
+import NavSection from "../nav-bar/NavSection";
+import LogoutCard from "./LogoutCard";
+import NewFeatureBox from "./NewFeatureBox";
+
 const SideBar = () => {
-    return (
-        <h1>Side Bar Component</h1>
-    );
-}
- 
+  return (
+    <div className="flex flex-col flex-none gap-6 bg-white w-[280px] px-6 py-8 h-dvh overflow-y-scroll scroll-smooth fixed">
+      <LogoMark />
+      <InputSearch />
+      <NavSection />
+      <NewFeatureBox />
+      <LogoutCard />
+    </div>
+  );
+};
+
 export default SideBar;
